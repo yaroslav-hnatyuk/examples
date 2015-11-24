@@ -299,9 +299,8 @@ class UsersControllerTest extends BaseControllerTest
     private function getExpectedResponse()
     {
         $expected = (new UsersFixture())->records[0];
-        //$expected['is_facebook_linked'] = '1';
         $expected['full_name'] = $expected['first_name'] . ' ' . $expected['last_name'];
-        $expected= ['is_facebook_linked'=>'1']+$expected;
+        $expected = ['is_facebook_linked'=>'1'] + $expected;
 
         unset($expected['password'], $expected['deleted']);
 
